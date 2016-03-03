@@ -1,4 +1,19 @@
 [
-	{ "caption": "Make Bookmarklet", "command": "make_bookmarklet" }
+	{ "caption": "Make Bookmarklet", "command": "make_bookmarklet" },
+
+	{
+	    "caption": "Preferences: Make Bookmarklet – Default",
+	    "command": "open_file",
+	    "args": {
+	        "file": "${packages}/MakeBookmarklet/MakeBookmarklet.sublime-settings"
+	    }
+	},
+	{
+	    "caption": "Preferences: Make Bookmarklet – User",
+	    "command": "open_file",
+	    "args": {
+	        "file": "${packages}/User/MakeBookmarklet.sublime-settings"
+	    }
+	},
 ]
 

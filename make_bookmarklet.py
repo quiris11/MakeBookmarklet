@@ -40,6 +40,8 @@ class MakeBookmarkletCommand(sublime_plugin.TextCommand):
 		bookmarklet = 'javascript:' + urllib.parse.quote(bookmarklet, '/()[]{}-_=;!?') + '\n'
 		v.insert(edit, 0, '// ' + bookmarklet)
 
-		# The real time saver is to just shove this on the clipboard directly.
-		# A bit rude, but that's what clipboard history is for.
-		sublime.set_clipboard(bookmarklet)
+		is_copy_to_clipboard = sublime.load_settings('MakeBookmarklet.sublime-settings').get('copy_to_clipboard')
+		print('is_copy_to_clipboard', is_copy_to_clipboard)
+
+		if is_copy_to_clipboard:
+			sublime.set_clipboard(bookmarklet)

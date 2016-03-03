@@ -1,4 +1,6 @@
 [
-	// No defaults
+	// No default key binding, but you can use "make_bookmarklet" in your User
+	// Key Bindings to add one like:
+	 
 	// { "keys": ["alt+b"], "command": "make_bookmarklet" }
 ]
