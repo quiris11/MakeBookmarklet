@@ -40,8 +40,8 @@ class MakeBookmarkletCommand(sublime_plugin.TextCommand):
 		# simple. I could try to copy the Perl version more closely, but that
 		# would be more code for no obvious gain. So far this works in
 		# testing.
-		bookmarklet = 'javascript:' + urllib.parse.quote(bookmarklet, '/()[]{}-_=;!?') + '\n'
-		v.insert(edit, 0, '// ' + bookmarklet)
+		bookmarklet = 'javascript:' + urllib.parse.quote(bookmarklet, '/()[]{}-_=;!?')
+		v.insert(edit, 0, '// ' + bookmarklet + '\n')
 
 		# Copy to clipboard if you want. Of course you do.
 		is_copy_to_clipboard = sublime.load_settings('MakeBookmarklet.sublime-settings').get('copy_to_clipboard')
