@@ -8,8 +8,16 @@ Converts a JavaScript file into a `javascript:` URL that can be used as a [bookm
 
 This is an unabasehed rip-off of [John Gruber's Perl version](http://daringfireball.net/2007/03/javascript_bookmarklet_builder), just made to work natively in Sublime Text.
 
+
 Usage
 -----
 
 From the Command Pallete, search for `Make Bookmarklet`.
+
 Or, under the menu `Tools > Make Bookmarklet`.
+
+
+Limitations
+-----------
+
+1. Does not strip `/* multi-line comments*/`, so don't use them.

@@ -35,13 +35,15 @@ class MakeBookmarkletCommand(sublime_plugin.TextCommand):
 		bookmarklet = KILL_LINE_ENDING_WHITESPACE_RE.sub('', bookmarklet)
 		bookmarklet = KILL_NEWLINES_RE.sub('', bookmarklet)
 
-		# Quotes all special characters. This is probably more aggressive than
-		# needed, but the result isn't reable anyway and this is simple.
+		# Quotes most special characters. This is probably more aggressive
+		# than needed, but the result isn't readable anyway and this is
+		# simple. I could try to copy the Perl version more closely, but that
+		# would be more code for no obvious gain. So far this works in
+		# testing.
 		bookmarklet = 'javascript:' + urllib.parse.quote(bookmarklet, '/()[]{}-_=;!?') + '\n'
 		v.insert(edit, 0, '// ' + bookmarklet)
 
+		# Copy to clipboard if you want. Of course you do.
 		is_copy_to_clipboard = sublime.load_settings('MakeBookmarklet.sublime-settings').get('copy_to_clipboard')
-		print('is_copy_to_clipboard', is_copy_to_clipboard)
-
 		if is_copy_to_clipboard:
 			sublime.set_clipboard(bookmarklet)
