@@ -16,6 +16,10 @@ From the Command Palette, search for `Make Bookmarklet`.
 
 Or, under the menu `Tools > Make Bookmarklet`.
 
+Example Bookmarklet
+-------------------
+
+- [Log The Focused Element](https://gist.github.com/gillibrand/e240b129ae748b9e2291)
 
 Limitations
 -----------
