@@ -25,7 +25,6 @@ class MakeBookmarkletCommand(sublime_plugin.TextCommand):
 		if (EXISTING_JS_COMMENT_RE.match(v.substr(first_line))):
 			v.replace(edit, first_line, '')
 
-		text_region = sublime.Region(0, v.size())
 		bookmarklet = v.substr(sublime.Region(0, v.size()))
 
 		bookmarklet = KILL_COMMENTS_RE.sub('', bookmarklet)
